@@ -7,7 +7,7 @@ from rooms.NormalRoom import NormalRoom
 
 class RoomFactory(ABC):
     def create_normal_room(self) -> NormalRoom:
-        raise NotImplementedError
+        pass
 
     def create_hard_room(self) -> HardRoom:
-        raise NotImplementedError
+        pass

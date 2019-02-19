@@ -7,4 +7,4 @@ from rooms.Room import Room
 class NormalRoom(Room):
     @abstractmethod
     def generate_loot(self) -> str:
-        raise NotImplementedError
+        pass
