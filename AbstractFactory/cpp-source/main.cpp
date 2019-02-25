@@ -6,6 +6,7 @@
 #include <iostream>
 #include "factories/RoomFactory.h"
 #include "factories/BasementFactory.h"
+#include "factories/CavesFactory.h"
 
 int main() {
   std::shared_ptr<RoomFactory> basement_factory = std::make_shared<BasementFactory>();
@@ -20,6 +21,14 @@ int main() {
   std::cout << new_hard_room->GenerateLoot() << " " << new_hard_room->GenerateBoss() << std::endl;
 
   std::cout << "Secret: " << new_hard_room->GenerateSecret(*hard_room) << std::endl;
+
+  std::shared_ptr<RoomFactory> caves_factory = std::make_shared<CavesFactory>();
+
+  std::shared_ptr<NormalRoom> caves_normal_room = caves_factory->CreateNormalRoom();
+  std::cout << caves_normal_room->GenerateLoot() << " " << caves_normal_room->GenerateBoss() << std::endl;
+
+  std::shared_ptr<HardRoom> caves_hard_room = caves_factory->CreateHardRoom();
+  std::cout << "Secret: " << caves_hard_room->GenerateSecret(*normal_room) << std::endl;
 
 }
 

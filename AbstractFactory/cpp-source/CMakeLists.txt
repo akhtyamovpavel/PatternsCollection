@@ -14,6 +14,6 @@ set(
     rooms/BasementHardRoom.h
     factories/RoomFactory.h
     factories/BasementFactory.h
-        rooms/BasementNormalRoom.cpp rooms/BasementNormalRoom.h)
+        rooms/BasementNormalRoom.cpp rooms/BasementNormalRoom.h factories/CavesFactory.cpp factories/CavesFactory.h rooms/CavesNormalRoom.cpp rooms/CavesNormalRoom.h rooms/CavesHardRoom.cpp rooms/CavesHardRoom.h)
 
 add_executable(AbstractFactory ${SOURCES} ${HEADERS})
