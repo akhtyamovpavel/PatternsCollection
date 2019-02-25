@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 from base.Burger import Burger
 
+
 class BurgerBuilder(ABC):
 
     @abstractmethod

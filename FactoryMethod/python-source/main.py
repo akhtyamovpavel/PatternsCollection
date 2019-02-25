@@ -1,10 +1,11 @@
-from routers import Router, Hub
+from routers import Router
 from routers import WiFiRouter
+from routers.FourRouter import FourRouter
 
 
 def main():
-    print('Connection via Hub')
-    hub: Router = Hub()
+    print('Connection via 4g')
+    hub: Router = FourRouter()
     hub_status = hub.connect_to_net()
 
     print(hub_status)

@@ -12,7 +12,7 @@ def main():
     print(normal_room.generate_loot(), normal_room.generate_boss())
 
     hard_room: HardRoom = basement_factory.create_hard_room()
-    print(hard_room.generate_loot(), normal_room.generate_boss())
+    print(hard_room.generate_loot(), hard_room.generate_boss())
 
     new_hard_room: HardRoom = basement_factory.create_hard_room()
     print('Secret:', new_hard_room.generate_secret(hard_room))
