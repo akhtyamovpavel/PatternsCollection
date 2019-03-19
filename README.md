@@ -9,3 +9,5 @@
     * [C++](/AbstractFactory/cpp-source)
     * [Python](/AbstractFactory/python-source)
   * [Builder](/Builder/python-source)
+  * [Prototype](/Prototype/cpp-source)
+  * [Adapter](/Adapter/cpp-source)
