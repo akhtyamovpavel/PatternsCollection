@@ -4,8 +4,15 @@
 
 #pragma once
 
-class IsaacFacade {
+#include <string>
+#include <AbstractFactory/cpp-source/serializers/GameSerializer.h>
 
+class IsaacFacade {
+ public:
+  std::string CreateGame(std::string difficulty);
+
+ private:
+  GameSerializer serializer_;
 };
 
 

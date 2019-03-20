@@ -6,6 +6,7 @@
 #include "RoomSerializer.h"
 
 #include <sstream>
+#include <vector>
 
 std::string GameSerializer::SerializeGame(const std::vector<std::shared_ptr<Room>> &rooms) {
   std::stringstream buffer;
@@ -13,7 +14,7 @@ std::string GameSerializer::SerializeGame(const std::vector<std::shared_ptr<Room
 
   std::shared_ptr<Room> previous_room = nullptr;
   RoomSerializer serializer;
-  for (std::shared_ptr<Room> room : rooms) {
+  for (auto room : rooms) {
     if (serializer.IsNormalRoom(room)) {
       buffer << serializer.SerializeNormalRoom(
           std::dynamic_pointer_cast<NormalRoom>(room)
