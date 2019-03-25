@@ -7,6 +7,7 @@
 #include "Room.h"
 
 class NormalRoom : public Room {
-
+ public:
+  virtual ~NormalRoom() = default;
 };
 

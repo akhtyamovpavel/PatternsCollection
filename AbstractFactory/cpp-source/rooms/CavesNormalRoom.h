@@ -11,7 +11,7 @@ class CavesNormalRoom : public NormalRoom {
   std::string GenerateBoss() const override;
   std::string GenerateLoot() const override;
   size_t chance() const override;
-
+  ~CavesNormalRoom() override = default;
 };
 
 

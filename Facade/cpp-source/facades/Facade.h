@@ -11,6 +11,7 @@ class Facade {
  public:
   std::string CreateNormalGame();
   std::string CreateHardGame();
+  std::string CreateVegiburger();
 
  private:
   IsaacFacade isaac_facade;

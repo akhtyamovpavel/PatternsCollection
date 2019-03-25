@@ -9,6 +9,7 @@
 class HardRoom : public Room {
  public:
   virtual bool GenerateSecret(const Room& previous_room) const = 0;
+  virtual ~HardRoom() = default;
 };
 
 

@@ -9,4 +9,5 @@ int main() {
   Facade facade;
   std::cout << facade.CreateNormalGame() << " is normal game" << std::endl;
   std::cout << facade.CreateHardGame() << " is hard game" << std::endl;
+  std::cout << facade.CreateVegiburger() << " is burger" << std::endl;
 }

@@ -11,3 +11,6 @@ std::string Facade::CreateNormalGame() {
 std::string Facade::CreateHardGame() {
   return isaac_facade.CreateGame("hard");
 }
+std::string Facade::CreateVegiburger() {
+  return burger_facade.createVegiburger();
+}
