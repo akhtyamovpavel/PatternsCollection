@@ -7,6 +7,7 @@
 #include <string>
 #include <HardRoom.h>
 #include <NormalRoom.h>
+#include <memory>
 
 class RoomSerializer {
  public:

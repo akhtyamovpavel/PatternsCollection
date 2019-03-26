@@ -7,6 +7,7 @@
 #include <string>
 #include <memory>
 #include <Room.h>
+#include <vector>
 
 class GameSerializer {
  public:
