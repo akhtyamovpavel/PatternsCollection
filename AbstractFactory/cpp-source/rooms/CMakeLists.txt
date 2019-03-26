@@ -14,3 +14,7 @@ set(
 )
 
 add_library(isaac_rooms SHARED ${SOURCES})
+
+install(TARGETS isaac_rooms
+	LIBRARY DESTINATION lib
+)

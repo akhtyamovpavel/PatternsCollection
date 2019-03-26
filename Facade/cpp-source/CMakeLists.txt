@@ -16,3 +16,9 @@ link_directories(../../lib)
 target_include_directories(Facade PRIVATE ../../)
 target_include_directories(Facade PRIVATE ../../AbstractFactory/cpp-source/rooms)
 target_link_libraries(Facade serializers isaac_rooms isaac_factories burger_shop)
+
+install(TARGETS Facade
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION bin
+	ARCHIVE DESTINATION lib
+)

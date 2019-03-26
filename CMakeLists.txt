@@ -33,7 +33,8 @@ add_subdirectory(AbstractFactory/cpp-source)
 add_subdirectory(Builder/cpp-source)
 add_subdirectory(Prototype/cpp-source)
 
-if(NOT ON_ARM)
+if(NOT ON_PI)
 	add_subdirectory(Adapter/cpp-source)
 endif()
 add_subdirectory(Facade/cpp-source)
+
