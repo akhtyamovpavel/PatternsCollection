@@ -11,3 +11,4 @@
   * [Builder](/Builder/python-source)
   * [Prototype](/Prototype/cpp-source)
   * [Adapter](/Adapter/cpp-source)
+  * [Bridge](/Bridge/cpp-source)
