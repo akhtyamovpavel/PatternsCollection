@@ -3,12 +3,13 @@ cmake_minimum_required(VERSION 2.8)
 
 option(ON_PI "Build on PI" OFF)
 
-if("${SYSROOT}" STREQUAL "")
-	message(FATAL_ERROR "Need sysroot for compiling")
-endif()
+
 
 if(ON_PI)
 	message("Compiling on Pi")
+	if("${SYSROOT}" STREQUAL "")
+		message(FATAL_ERROR "Need sysroot for compiling")
+	endif()
 
 	set(CMAKE_CXX_COMPILER arm-linux-gnueabihf-g++)
 	set(CMAKE_C_COMPILER arm-linux-gnueabihf-gcc)
@@ -32,6 +33,7 @@ set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(AbstractFactory/cpp-source)
 add_subdirectory(Builder/cpp-source)
 add_subdirectory(Prototype/cpp-source)
+add_subdirectory(Bridge/cpp-source)
 
 if(NOT ON_PI)
 	add_subdirectory(Adapter/cpp-source)
