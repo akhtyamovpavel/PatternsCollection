@@ -23,7 +23,9 @@ std::shared_ptr<Dish> CreateDish() {
 
 int main() {
   auto ration = std::make_shared<Dish>()->Add(
-      CreateDish<Breakfast>()->Add(CreateDishComponent<Milk>())->Add(CreateDishComponent<Milk>())
+      CreateDish<Breakfast>()
+          ->Add(CreateDishComponent<Milk>())
+          ->Add(CreateDishComponent<Milk>())
     )->Add(
       CreateDishComponent<Milk>()
   );

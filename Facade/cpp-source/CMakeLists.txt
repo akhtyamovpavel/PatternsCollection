@@ -19,6 +19,6 @@ target_link_libraries(Facade serializers isaac_rooms isaac_factories burger_shop
 
 install(TARGETS Facade
 	RUNTIME DESTINATION bin
-	LIBRARY DESTINATION bin
+	LIBRARY DESTINATION lib
 	ARCHIVE DESTINATION lib
 )

@@ -7,7 +7,7 @@ set(SOURCES
     wheels/Gamepad.cpp
     axles/CarAxle.cpp
     wheels/PlaneWheel.cpp
-        axles/PlaneAxle.cpp
+    axles/PlaneAxle.cpp
 )
 
 add_executable(Bridge main.cpp ${SOURCES})
