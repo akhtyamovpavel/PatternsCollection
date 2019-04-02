@@ -41,8 +41,20 @@ ExternalProject_Add(
 include_directories(${EXTERNAL_INSTALL_LOCATION}/include)
 link_directories(${EXTERNAL_INSTALL_LOCATION}/lib)
 
-add_executable(Decorator main.cpp)
+
+
+add_executable(Decorator
+    main.cpp
+    notifiers/Notifier.cpp
+    notifiers/LogNotifier.cpp
+    notifiers/DecoratorNotifier.cpp
+    notifiers/TgNotifier.cpp
+    notifiers/EmailNotifier.cpp
+        include/EmailNotifier.h
+)
+
 add_dependencies(Decorator tgbot inicpp_project vmime_project)
+target_include_directories(Decorator PRIVATE include)
 
 target_link_libraries(Decorator
     TgBot inicpp vmime
