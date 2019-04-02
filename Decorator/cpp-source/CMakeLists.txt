@@ -27,16 +27,30 @@ ExternalProject_Add(
 ExternalProject_Add(
         inicpp_project
         GIT_REPOSITORY https://github.com/SemaiCZE/inicpp
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_LOCATION} -DINCLUDE_INSTALL_DIR=${EXTERNAL_INSTALL_LOCATION}/include -DLIB_INSTALL_DIR=${EXTERNAL_INSTALL_LOCATION}/lib
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_LOCATION}
+        -DINCLUDE_INSTALL_DIR=${EXTERNAL_INSTALL_LOCATION}/include
+        -DLIB_INSTALL_DIR=${EXTERNAL_INSTALL_LOCATION}/lib
+)
+
+ExternalProject_Add(
+        vmime_project
+        GIT_REPOSITORY https://github.com/kisli/vmime
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_LOCATION} -DVMIME_HAVE_SASL_SUPPORT=OFF
 )
 
 include_directories(${EXTERNAL_INSTALL_LOCATION}/include)
 link_directories(${EXTERNAL_INSTALL_LOCATION}/lib)
 
 add_executable(Decorator main.cpp)
-add_dependencies(Decorator tgbot inicpp_project)
+add_dependencies(Decorator tgbot inicpp_project vmime_project)
 
-target_link_libraries(Decorator TgBot inicpp ${CMAKE_THREAD_LIBS_INIT} ${OPENSSL_LIBRARIES} ${Boost_LIBRARIES} ${CURL_LIBRARIES})
+target_link_libraries(Decorator
+    TgBot inicpp vmime
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${OPENSSL_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${CURL_LIBRARIES}
+)
 
 message(INFO ${Decorator_SOURCE_DIR}/configs/config.ini)
 add_custom_command(
