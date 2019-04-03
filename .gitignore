@@ -2,3 +2,4 @@
 *.pyc
 *cmake-build-debug*
 *build*
+!Builder
