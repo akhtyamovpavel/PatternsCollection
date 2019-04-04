@@ -6,6 +6,8 @@
 
 #include <Notifier.h>
 #include <fstream>
+#include <memory>
+
 
 class LogNotifier : public Notifier {
  public:

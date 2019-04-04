@@ -3,6 +3,7 @@
 //
 
 #include <fstream>
+#include <sstream>
 #include "JsonStorage.h"
 #include <boost/algorithm/string.hpp>
 

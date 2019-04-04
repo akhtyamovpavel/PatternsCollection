@@ -29,6 +29,5 @@ int main() {
   email_notifier->Initialize(config["email"]);
 
   email_notifier->Notify("Hello, TP");
-  email_notifier->Notify("My seminar");
   return 0;
 }

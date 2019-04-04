@@ -5,6 +5,8 @@
 #pragma once
 
 #include <Notifier.h>
+#include <memory>
+
 
 class DecoratorNotifier : public Notifier {
  public:
