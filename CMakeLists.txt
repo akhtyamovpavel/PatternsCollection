@@ -36,6 +36,7 @@ add_subdirectory(AbstractFactory/cpp-source)
 add_subdirectory(Builder/cpp-source)
 add_subdirectory(Prototype/cpp-source)
 add_subdirectory(Bridge/cpp-source)
+add_subdirectory(ChainResponsibility/cpp-source)
 
 if(NOT ON_PI)
 	add_subdirectory(Adapter/cpp-source)
