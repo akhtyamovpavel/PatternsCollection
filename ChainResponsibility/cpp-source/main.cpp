@@ -17,7 +17,9 @@
 #include "StderrHandler.h"
 
 int main() {
-  std::shared_ptr<BaseHandler> handler = CreateHandler<BaseHandler, BaseHandler>(LogLevel::All());
+  std::shared_ptr<BaseHandler> handler = CreateHandler<BaseHandler, BaseHandler>(
+      LogLevel::All()
+  );
   handler->SetErrorFunction(
     [](
         const std::exception& exception,
@@ -45,4 +47,8 @@ int main() {
     .message = "I want to log this message",
     .level = LogLevel::DEBUG
   });
+  handler->Handle({
+                      .message = "I want to log this message",
+                      .level = LogLevel::INFO
+                  });
 }

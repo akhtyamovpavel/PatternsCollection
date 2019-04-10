@@ -8,4 +8,4 @@ add_executable(Strategy
     SimpleFlyBehaviour.cpp
     FlyBehaviour.cpp
     DuckHuntFlyBehaviour.cpp
-)
+        QuackBehaviour.cpp QuackBehaviour.h SimpleQuackBehaviour.cpp SimpleQuackBehaviour.h)
