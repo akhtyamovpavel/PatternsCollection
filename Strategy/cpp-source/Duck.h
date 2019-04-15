@@ -8,6 +8,7 @@
 #include "SimpleFlyBehaviour.h"
 #include "QuackBehaviour.h"
 #include "SwimBehaviour.h"
+
 class Duck {
 
  public:

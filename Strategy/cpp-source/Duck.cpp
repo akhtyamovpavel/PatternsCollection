@@ -6,6 +6,7 @@
 
 #include "Duck.h"
 #include "QuackBehaviour.h"
+
 void Duck::SetFlyBehaviour(std::shared_ptr<FlyBehaviour> behaviour) {
   fly_behaviour_ = std::move(behaviour);
 }
@@ -29,3 +30,4 @@ void Duck::Swim() {
 void Duck::SetSwimBehaviour(std::shared_ptr<SwimBehaviour> swim_behaviour) {
   swim_behaviour_ = std::move(swim_behaviour);
 }
+

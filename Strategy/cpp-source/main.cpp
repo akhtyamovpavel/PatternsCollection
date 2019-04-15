@@ -8,6 +8,7 @@
 #include "SimpleQuackBehaviour.h"
 #include "SimpleSwimBehaviour.h"
 
+
 int main() {
   Duck duck;
   duck.SetFlyBehaviour(std::make_shared<SimpleFlyBehaviour>());
@@ -24,5 +25,4 @@ int main() {
   duck_hunt.Quack();
   duck_hunt.SetSwimBehaviour(std::make_shared<SimpleSwimBehaviour>());
   duck_hunt.Swim();
-
 }
