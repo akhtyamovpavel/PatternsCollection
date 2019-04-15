@@ -51,7 +51,6 @@ add_executable(Decorator
     notifiers/DecoratorNotifier.cpp
     notifiers/TgNotifier.cpp
     notifiers/EmailNotifier.cpp
-        include/EmailNotifier.h
 )
 
 add_dependencies(Decorator tgbot inicpp_project vmime_project)
