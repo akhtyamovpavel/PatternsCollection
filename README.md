@@ -12,3 +12,8 @@
   * [Prototype](/Prototype/cpp-source)
   * [Adapter](/Adapter/cpp-source)
   * [Bridge](/Bridge/cpp-source)
+  * [Decorator](/Decorator/cpp-source)
+  * [Observer](/Observer/cpp-source)
+  * [Stratery](/Strategy/cpp-source)
+  * [Chain of Responsibility](/ChainResponsibility/cpp-source)
+  * [Command](/Command/cpp-source)
