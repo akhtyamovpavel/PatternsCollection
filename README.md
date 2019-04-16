@@ -20,3 +20,4 @@
   * [Strategy](/Strategy/cpp-source)
   * [Chain of Responsibility](/ChainResponsibility/cpp-source)
   * [Command](/Command/cpp-source)
+  * [Mediator](/Mediator/cpp-source)
