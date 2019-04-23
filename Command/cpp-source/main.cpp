@@ -25,20 +25,22 @@ void ProcessCommand(Waiter& waiter, Dish dish) {
     );
     waiter.SetCommand(command_class);
   }
+//  waiter.ExecuteCommand();
   std::thread thread(&Waiter::ExecuteCommand, waiter);
   thread.detach();
 }
 
 
 int main() {
-  std::string action;
+  std::string menu;
   Waiter waiter;
-  while (std::getline(std::cin, action)) {
+  while (std::getline(std::cin, menu)) {
     std::string dish;
     std::getline(std::cin, dish);
     ProcessCommand(waiter, {
       .dish = dish,
-      .menu = action
+      .menu = menu
     });
+    std::cerr << "Ready" << std::endl;
   }
 }

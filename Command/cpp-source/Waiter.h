@@ -15,7 +15,6 @@ class Waiter {
  private:
   std::shared_ptr<Command> command_;
   std::vector<Cook> cooks_;
-
 };
 
 

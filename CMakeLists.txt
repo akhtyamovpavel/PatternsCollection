@@ -41,6 +41,7 @@ add_subdirectory(Strategy/cpp-source)
 add_subdirectory(Observer/cpp-source)
 add_subdirectory(Command/cpp-source)
 add_subdirectory(Mediator/cpp-source)
+add_subdirectory(Memento/cpp-source)
 
 if(NOT ON_PI)
 	add_subdirectory(Adapter/cpp-source)

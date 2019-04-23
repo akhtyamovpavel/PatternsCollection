@@ -28,8 +28,12 @@ void Plane::Land() {
 
   bool land_started = false;
   while (!land_started) {
-    land_started = mediator_->Notify(shared_from_this(), "Want to land");
-    std::this_thread::sleep_for(std::chrono::milliseconds(580));
+    land_started = mediator_->Notify(
+        shared_from_this(), "Want to land"
+      );
+    std::this_thread::sleep_for(
+        std::chrono::milliseconds(580)
+    );
   }
 
   status_ = ATTACHED;
