@@ -21,3 +21,6 @@
   * [Chain of Responsibility](/ChainResponsibility/cpp-source)
   * [Command](/Command/cpp-source)
   * [Mediator](/Mediator/cpp-source)
+  * [State](/State/cpp-source)
+  * [Memento](/Memento/cpp-source)
+  * [Visitor](/Visitor/cpp-source)
