@@ -32,6 +32,7 @@ message("Bin dir is ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 project(PatternsCollection)
 
 set(CMAKE_CXX_STANDARD 14)
+add_subdirectory(FactoryMethod/cpp-source)
 add_subdirectory(AbstractFactory/cpp-source)
 add_subdirectory(Builder/cpp-source)
 add_subdirectory(Prototype/cpp-source)
