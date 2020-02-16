@@ -7,6 +7,7 @@
 #include "states/State.h"
 
 #include <memory>
+
 using StatePointer = std::unique_ptr<State>;
 
 
@@ -25,7 +26,7 @@ class TrafficLight {
   // TODO(akhtyamovpavel) Refactor this state
   void PrintState();
  private:
-  std::unique_ptr<State> state_;
+  StatePointer state_;
   Direction direction_;
 };
 

@@ -14,10 +14,13 @@ int main() {
   game.StartNewGame();
 
   game.IncreaseLevel();
+  std::cout << "Before first save" << std::endl;
   game.ShowCurrentProgress();
   caretaker.Save("first_save");
+
   game.IncreaseLevel();
   game.ShowCurrentProgress();
+
   caretaker.Save("second_save");
 
 

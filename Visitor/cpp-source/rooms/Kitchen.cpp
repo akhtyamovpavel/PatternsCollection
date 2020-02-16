@@ -7,6 +7,7 @@
 void Kitchen::Accept(Visitor *visitor) {
   visitor->visit(this);
 }
+
 std::string Kitchen::GetName() {
   return "Kitchen";
 }
