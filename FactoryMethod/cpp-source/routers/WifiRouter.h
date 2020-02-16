@@ -8,7 +8,7 @@
 
 class WifiRouter : public Router {
  public:
-  virtual std::shared_ptr<Route> CreateRoute() const override;
+  std::shared_ptr<Route> CreateRoute() const override;
 
 };
 
