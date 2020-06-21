@@ -6,6 +6,7 @@
 #include "../rooms/Kitchen.h"
 #include "../rooms/BathRoom.h"
 #include "../rooms/LivingRoom.h"
+#include "../rooms/Home.h"
 
 
 void Windower::visit(Kitchen *kitchen) {
@@ -19,4 +20,9 @@ void Windower::visit(LivingRoom *living_room) {
 
 void Windower::visit(BathRoom *bath_room) {
 
+}
+
+void Windower::visit(Home *home) {
+  home->kitchen_.Accept(this);
+  home->living_room_.Accept(this);
 }

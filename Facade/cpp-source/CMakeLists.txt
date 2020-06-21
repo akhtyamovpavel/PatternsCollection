@@ -17,6 +17,7 @@ target_include_directories(Facade PRIVATE ../../)
 target_include_directories(Facade PRIVATE ../../AbstractFactory/cpp-source/rooms)
 target_link_libraries(Facade serializers isaac_rooms isaac_factories burger_shop)
 
+# set_target_properties(Facade PROPERTIES BUILD_WITH_INSTALL_RPATH TRUE)
 install(TARGETS Facade
 	RUNTIME DESTINATION bin
 	LIBRARY DESTINATION lib

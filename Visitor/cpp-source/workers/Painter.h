@@ -12,6 +12,7 @@ class Painter : public Visitor {
   void visit(LivingRoom *living_room) override;
   void visit(BathRoom *bath_room) override;
   void Paint(Surface* surface, std::string color);
+  void visit(Home *home) override;
 };
 
 

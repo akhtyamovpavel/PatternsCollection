@@ -13,6 +13,7 @@ class Tiler : public Visitor {
   void visit(LivingRoom *living_room) override;
   void visit(BathRoom *bath_room) override;
   void Tile(Surface* surface);
+  void visit(Home *home) override;
 };
 
 

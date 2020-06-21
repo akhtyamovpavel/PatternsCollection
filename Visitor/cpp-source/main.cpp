@@ -10,30 +10,14 @@
 #include "workers/Windower.h"
 #include "workers/SanTech.h"
 
+#include "rooms/Home.h"
+
 int main() {
-  BathRoom bath_room;
-  Kitchen kitchen;
-  LivingRoom living_room;
+  Home home;
 
   SanTech sanTech;
-  kitchen.Accept(&sanTech);
-  kitchen.ShowDecorations();
   Tiler tiler;
 
-  kitchen.Accept(&tiler);
-
-  bath_room.ShowDecorations();
-  kitchen.ShowDecorations();
-  living_room.ShowDecorations();
-
-  Painter painter;
-  kitchen.Accept(&painter);
-  living_room.Accept(&painter);
-
-  kitchen.ShowDecorations();
-  living_room.ShowDecorations();
-
-  Windower windower;
-  kitchen.Accept(&windower);
-  kitchen.ShowDecorations();
+  home.Accept(&sanTech);
+  home.Accept(&tiler);
 }

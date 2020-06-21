@@ -10,6 +10,7 @@ class Windower : public Visitor {
   void visit(Kitchen *kitchen) override;
   void visit(LivingRoom *living_room) override;
   void visit(BathRoom *bath_room) override;
+  void visit(Home *home) override;
 
 };
 

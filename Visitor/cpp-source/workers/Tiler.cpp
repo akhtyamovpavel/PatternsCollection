@@ -5,7 +5,7 @@
 #include "Tiler.h"
 #include "../rooms/Kitchen.h"
 #include "../rooms/BathRoom.h"
-
+#include "../rooms/Home.h"
 
 void Tiler::visit(Kitchen *kitchen) {
   Tile(&(kitchen->wall));
@@ -23,4 +23,10 @@ void Tiler::visit(BathRoom *bath_room) {
 void Tiler::Tile(Surface* surface) {
   surface->material = "tile";
   surface->color = "white";
+}
+
+void Tiler::visit(Home *home) {
+  home->bath_room_.Accept(this);
+  home->kitchen_.Accept(this);
+  home->living_room_.Accept(this);
 }

@@ -4,9 +4,16 @@
 
 #include "LivingRoom.h"
 
+#include "../workers/Tiler.h"
+
 void LivingRoom::Accept(Visitor *visitor) {
   visitor->visit(this);
 }
+
 std::string LivingRoom::GetName() {
   return "LivingRoom";
+}
+
+void LivingRoom::Accept(Tiler *tiler) {
+
 }

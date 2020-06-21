@@ -11,8 +11,8 @@ if(ON_PI)
 		message(FATAL_ERROR "Need sysroot for compiling")
 	endif()
 
-	set(CMAKE_CXX_COMPILER arm-linux-gnueabihf-g++)
-	set(CMAKE_C_COMPILER arm-linux-gnueabihf-gcc)
+    set(CMAKE_CXX_COMPILER ${SYSROOT}/arm-linux-gnueabihf-g++)
+    set(CMAKE_C_COMPILER ${SYSROOT}/arm-linux-gnueabihf-gcc)
 	set(CMAKE_FIND_ROOT_PATH ${SYSROOT})
 	set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 	set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
@@ -20,11 +20,32 @@ if(ON_PI)
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib-arm)
 	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib-arm)
 	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin-arm)
+    set(
+		CMAKE_CXX_FLAGS
+		"${CMAKE_CXX_FLAGS} -marm"
+    )
+
+    set(
+        CMAKE_C_FLAGS
+        "${CMAKE_CXX_FLAGS} -marm"
+    )
 else()
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
 	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
 	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 endif()
+
+set(CMAKE_SKIP_BUILD_RPATH FALSE)
+
+# when building, don't use the install RPATH already
+# (but later on when installing)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+# the RPATH to be used when installing
+set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+# don't add the automatically determined parts of the RPATH
+# which point to directories outside the build tree to the install RPATH
 
 
 

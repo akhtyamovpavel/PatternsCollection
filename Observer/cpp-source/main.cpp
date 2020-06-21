@@ -62,12 +62,14 @@ int main() {
 
   World w;
   w.storage = std::shared_ptr<MessageStorage>(&m);
-  Player p;
+  Player p1; // Editor
+  Player p2; // Listener
 
-  w.Subscribe(p);
+  w.Subscribe(p1);
+  w.Subscribe(p2);
 
   std::thread t1(&MessageStorage::ReadMessages, &m);
-  std::thread t2(ProcessMessages, std::ref(p));
+  std::thread t2(ProcessMessages, std::ref(p1));
   t1.join();
   t2.join();
 }

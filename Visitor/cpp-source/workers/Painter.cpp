@@ -6,6 +6,7 @@
 #include "../rooms/Kitchen.h"
 #include "../rooms/LivingRoom.h"
 #include "../rooms/BathRoom.h"
+#include "../rooms/Home.h"
 
 void Painter::visit(Kitchen *kitchen) {
   Paint(&(kitchen->ceiling), "white");
@@ -24,4 +25,10 @@ void Painter::visit(BathRoom *bath_room) {
 void Painter::Paint(Surface *surface, std::string color) {
   surface->material = "paint";
   surface->color = color;
+}
+
+void Painter::visit(Home *home) {
+  home->kitchen_.Accept(this);
+  home->living_room_.Accept(this);
+  home->bath_room_.Accept(this);
 }

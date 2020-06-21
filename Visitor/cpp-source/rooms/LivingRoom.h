@@ -5,9 +5,12 @@
 #pragma once
 
 #include "ElementRoom.h"
+
+#include "../workers/Tiler.h"
 class LivingRoom : public ElementRoom {
  public:
   void Accept(Visitor *visitor) override;
+  void Accept(Tiler* tiler);
   std::string GetName() override;
 };
 
