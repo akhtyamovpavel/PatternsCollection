@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install Boost
-      run: sudo apt-get update && sudo apt-get install -yq libboost1.65-dev
+      run: sudo apt-get update && sudo apt-get install -yq libboost1.65-dev libboost-system1.65-dev
 
     # Runs a single command using the runners shell
     - name: Build
