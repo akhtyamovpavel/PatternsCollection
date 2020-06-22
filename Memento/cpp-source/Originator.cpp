@@ -15,10 +15,10 @@ void Originator::IncreaseLevel() {
 
 void Originator::StartNewGame() {
   state_ = {
-      .level = 1,
-      .save_name = "",
       .place = "Start",
-      .progress = 0
+      .level = 1,
+      .progress = 0,
+      .save_name = ""
   };
 }
 

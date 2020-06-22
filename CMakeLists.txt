@@ -53,7 +53,7 @@ project(PatternsCollection)
 
 find_package(Threads REQUIRED)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 add_subdirectory(FactoryMethod/cpp-source)
 add_subdirectory(AbstractFactory/cpp-source)
 add_subdirectory(Builder/cpp-source)

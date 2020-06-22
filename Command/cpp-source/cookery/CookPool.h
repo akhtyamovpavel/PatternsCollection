@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <memory>
 #include "Cook.h"
 #include "Barman.h"
 
