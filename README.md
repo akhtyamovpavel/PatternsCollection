@@ -14,7 +14,9 @@
   * [Builder](/Builder)
     * [C++](/Builder/cpp-source)
     * [Python](/Builder/python-source)
-  * [Prototype](/Prototype/cpp-source)
+  * [Prototype](/Prototype)
+    * [C++](/Prototype/cpp-source)
+    * [Python](/Prototype/python-source)
 * Структурные паттерны:
   * [Adapter](/Adapter/cpp-source)
   * [Bridge](/Bridge/cpp-source)
