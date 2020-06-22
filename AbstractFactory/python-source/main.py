@@ -17,7 +17,6 @@ def main():
     new_hard_room: HardRoom = basement_factory.create_hard_room()
     print('Secret:', new_hard_room.generate_secret(hard_room))
 
-
     caves_factory: RoomFactory = CavesFactory()
 
     caves_normal_room: NormalRoom = caves_factory.create_normal_room()

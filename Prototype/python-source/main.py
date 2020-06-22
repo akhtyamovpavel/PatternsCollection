@@ -18,6 +18,5 @@ if __name__ == '__main__':
         print(machine.engine_name)
         try:
             print(machine.chassis_name)
-        except AttributeError as e:
-            print(f'Could not be casted to PirelliFerrari')
-
+        except AttributeError:
+            print('Could not be casted to PirelliFerrari')

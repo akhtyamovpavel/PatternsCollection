@@ -1,5 +1,6 @@
 from __future__ import annotations
-from abc import ABC, abstractmethod
+
+from abc import abstractmethod
 
 from rooms.Room import Room
 

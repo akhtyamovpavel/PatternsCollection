@@ -18,7 +18,9 @@
     * [C++](/Prototype/cpp-source)
     * [Python](/Prototype/python-source)
 * Структурные паттерны:
-  * [Adapter](/Adapter/cpp-source)
+  * [Adapter](/Adapter)
+    * [C++](/Adapter/cpp-source)
+    * [Python](/Adapter/python-source)
   * [Bridge](/Bridge/cpp-source)
   * [Decorator](/Decorator/cpp-source)
   * [Composite](/Composite/cpp-source)

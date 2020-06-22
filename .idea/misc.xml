@@ -3,6 +3,8 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
   <component name="CidrRootsConfiguration">
     <sourceRoots>
+      <file path="$PROJECT_DIR$/AbstractFactory/python-source" />
+      <file path="$PROJECT_DIR$/Adapter/python-source" />
       <file path="$PROJECT_DIR$/Builder/python-source" />
       <file path="$PROJECT_DIR$/FactoryMethod/python-source" />
       <file path="$PROJECT_DIR$/FactoryMethod/python-source/routers" />
