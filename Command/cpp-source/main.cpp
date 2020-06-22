@@ -38,8 +38,8 @@ int main() {
     std::string dish;
     std::getline(std::cin, dish);
     ProcessCommand(waiter, {
-      .dish = dish,
-      .menu = menu
+      .menu = menu,
+      .dish = dish
     });
     std::cerr << "Ready" << std::endl;
   }

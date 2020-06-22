@@ -26,8 +26,8 @@ int main() {
         const Log& request
         ) {
       Log output_log{
-        .level = LogLevel::ERROR,
-        .message = exception.what()
+        .message = exception.what(),
+        .level = LogLevel::ERROR
       };
 
       std::cerr << output_log << std::endl;
