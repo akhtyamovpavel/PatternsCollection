@@ -9,6 +9,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 
 class CreateSoupCommand : public Command {
  public:

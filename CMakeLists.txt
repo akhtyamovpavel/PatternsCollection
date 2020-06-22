@@ -48,9 +48,10 @@ set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
 # which point to directories outside the build tree to the install RPATH
 
 
-
 message("Bin dir is ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 project(PatternsCollection)
+
+find_package(Threads REQUIRED)
 
 set(CMAKE_CXX_STANDARD 14)
 add_subdirectory(FactoryMethod/cpp-source)
