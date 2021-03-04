@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import subprocess
+import re
+from pylint.lint import Run
+import glob
+
+results = Run(glob.glob('**/*.py', recursive=True), do_exit=False)
+score = results.linter.stats['global_note']
+
+if float(score) < 9.:
+	print("You shouldn't commit this dirty code :(")
+	exit(1)
