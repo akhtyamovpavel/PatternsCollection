@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import subprocess
+
+pylint_out = subprocess.check_output("pylint $(find . -name \"*.py\") --score=y --reports=n; exit 0", shell=True)
+
+score = float(pylint_out.decode("utf-8").split('\n')[-3].split(' ')[6].split('/')[0])
+
+if (score < 9.0000001):
+    print("bad pylint score: " + str(score))
+    exit(1)
+
+
