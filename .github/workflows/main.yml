@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install Boost
-      run: sudo apt-get update && sudo apt-get install -yq sendmail gnutls-dev libboost1.65-dev libboost-system1.65-dev libcurl4-gnutls-dev
+      run: sudo apt-get update && sudo apt-get install -yq sendmail gnutls-dev libboost-dev libboost-system-dev libcurl4-gnutls-dev
 
     # Runs a single command using the runners shell
     - name: Build
