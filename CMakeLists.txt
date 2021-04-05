@@ -11,8 +11,8 @@ if(ON_PI)
 		message(FATAL_ERROR "Need sysroot for compiling")
 	endif()
 
-    set(CMAKE_CXX_COMPILER ${SYSROOT}/arm-linux-gnueabihf-g++)
-    set(CMAKE_C_COMPILER ${SYSROOT}/arm-linux-gnueabihf-gcc)
+    set(CMAKE_CXX_COMPILER ${SYSROOT}/aarch64-linux-gnu-g++)
+    set(CMAKE_C_COMPILER ${SYSROOT}/aarch64-linux-gnu-gcc)
 	set(CMAKE_FIND_ROOT_PATH ${SYSROOT})
 	set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 	set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
@@ -22,12 +22,12 @@ if(ON_PI)
 	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin-arm)
     set(
 		CMAKE_CXX_FLAGS
-		"${CMAKE_CXX_FLAGS} -marm"
+		"${CMAKE_CXX_FLAGS} -fasm"
     )
 
     set(
         CMAKE_C_FLAGS
-        "${CMAKE_CXX_FLAGS} -marm"
+        "${CMAKE_CXX_FLAGS} -fasm"
     )
 else()
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
