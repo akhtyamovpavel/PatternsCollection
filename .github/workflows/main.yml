@@ -31,3 +31,9 @@ jobs:
       
     - name: Install Project
       run: cd build && make install 
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: artifacts
+        path: dist/*
