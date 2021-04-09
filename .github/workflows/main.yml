@@ -37,3 +37,11 @@ jobs:
       with:
         name: artifacts
         path: dist/*
+      
+    - uses: act10ns/slack@v1
+      with: 
+        status: ${{ job.status }}
+      if: always()
+      env:
+        SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
+      
