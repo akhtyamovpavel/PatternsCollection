@@ -35,4 +35,4 @@ jobs:
         status: ${{ job.status }}
       if: always()
       env:
-        SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
