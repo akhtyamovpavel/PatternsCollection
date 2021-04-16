@@ -29,3 +29,10 @@ jobs:
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude build
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics  --ignore F401 --exclude build
+    
+    - uses: act10ns/slack@v1
+      with: 
+        status: ${{ job.status }}
+      if: always()
+      env:
+        SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
