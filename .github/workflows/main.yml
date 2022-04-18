@@ -26,7 +26,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -yq sendmail gnutls-dev libboost-dev libboost-system-dev libcurl4-gnutls-dev
 
     # Runs a single command using the runners shell
-    - name: Build Project
+    - name: BuildProject
       run: mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=../dist .. && make -j9 && cd ..
       
     - name: Install Project
