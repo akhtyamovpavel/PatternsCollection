@@ -3,7 +3,7 @@
 
 [![Python build](https://github.com/akhtyamovpavel/PatternsCollection/actions/workflows/python.yml/badge.svg)](https://github.com/akhtyamovpavel/PatternsCollection/actions/workflows/python.yml)
 
-Кодовая база примеров паттернов проектирования по курсу "Технологии программирования, МФТИ"
+Кодовая база примеров паттернов проектирования по курсу "Технологии программирования"
 
 ## Содержание
 
