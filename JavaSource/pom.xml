@@ -13,6 +13,24 @@
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>2.0</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -36,6 +54,12 @@
                         <id>Singleton</id>
                         <configuration>
                             <mainClass>ru.akhcheck.patterns.singleton.MainSingleton</mainClass>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Adapter</id>
+                        <configuration>
+                            <mainClass>ru.akhcheck.patterns.adapter.MainAdapter</mainClass>
                         </configuration>
                     </execution>
                 </executions>
