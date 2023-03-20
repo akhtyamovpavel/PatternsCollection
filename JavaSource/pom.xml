@@ -62,6 +62,12 @@
                             <mainClass>ru.akhcheck.patterns.adapter.MainAdapter</mainClass>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>Bridge</id>
+                        <configuration>
+                            <mainClass>ru.akhcheck.patterns.bridge.MainBridge</mainClass>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
