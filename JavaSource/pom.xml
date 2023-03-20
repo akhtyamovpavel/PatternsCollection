@@ -68,6 +68,12 @@
                             <mainClass>ru.akhcheck.patterns.bridge.MainBridge</mainClass>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>Composite</id>
+                        <configuration>
+                            <mainClass>ru.akhcheck.patterns.composite.MainComposite</mainClass>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
