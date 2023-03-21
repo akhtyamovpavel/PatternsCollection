@@ -1,6 +1,7 @@
 package ru.akhcheck.patterns.builder;
 
 import ru.akhcheck.patterns.builder.base.Burger;
+import ru.akhcheck.patterns.builder.builders.VegiburgerBuilder;
 import ru.akhcheck.patterns.builder.builders.BurgerBuilder;
 import ru.akhcheck.patterns.builder.builders.HamburgerBuilder;
 import ru.akhcheck.patterns.builder.builders.VegiburgerBuilder;

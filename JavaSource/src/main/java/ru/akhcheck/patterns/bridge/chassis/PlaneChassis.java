@@ -31,15 +31,15 @@ public class PlaneChassis implements Chassis {
 
     @Override
     public void moveUp(float height) {
-        this.angle -= height;
-        if (this.angle < 0) {
-            this.angle = 0;
-        }
+        this.angle += height;
     }
 
     @Override
     public void moveDown(float height) {
-        this.angle += angle;
+        this.angle -= angle;
+        if (this.angle < 0) {
+            this.angle = 0;
+        }
     }
 
     @Override
