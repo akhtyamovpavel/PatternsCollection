@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+import subprocess
+
+linter_result = subprocess.check_output("pylint $(find . -name \"*.py\") --score=y --reports=n; exit 0", shell=True)
+
+linter_score = float(pylint_out.decode().split('\n')[-3].split()[6].split('/')[0])
+
+if linter_score < 9:
+    exit(1)
