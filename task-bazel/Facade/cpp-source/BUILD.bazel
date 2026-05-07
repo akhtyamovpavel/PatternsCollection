@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+cc_binary(
+    name = "Facade",
+    srcs = glob([
+        "*.cpp",
+        "facades/*.cpp",
+        "facades/*.h",
+    ]),
+    copts = ["-I."],
+    deps = [
+        "//AbstractFactory/cpp-source/factories:isaac_factories",
+        "//AbstractFactory/cpp-source/rooms:isaac_rooms",
+        "//AbstractFactory/cpp-source/serializers:serializers",
+        "//Builder/cpp-source:burger_shop",
+    ],
+)

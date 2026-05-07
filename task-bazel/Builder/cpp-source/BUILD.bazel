@@ -1,0 +1,16 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "burger_shop",
+    srcs = glob([
+        "*.cpp",
+        "builders/*.cpp",
+        "builders/base/*.cpp",
+    ]),
+    hdrs = glob([
+        "*.h",
+        "builders/*.h",
+        "builders/base/*.h",
+    ]),
+    visibility = ["//visibility:public"],
+)

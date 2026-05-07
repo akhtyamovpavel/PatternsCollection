@@ -1,0 +1,9 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "isaac_factories",
+    srcs = glob(["*.cpp"]),
+    hdrs = glob(["*.h"]),
+    visibility = ["//visibility:public"],
+    deps = ["//AbstractFactory/cpp-source/rooms:isaac_rooms"],
+)
