@@ -2,39 +2,33 @@ name: Python build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, main ]
   pull_request:
-    branches:
-    - master
+    branches: [ master, main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.7
+    - uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude build
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics  --ignore F401 --exclude build
-    
-    - name: slack-send
-      uses: slackapi/slack-github-action@v1.18.0
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
-        channel-id: 'github-ci'
-        slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-      env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        python-version: '3.12'
+
+    - name: Install ruff
+      run: python -m pip install --upgrade pip ruff
+
+    - name: Lint with ruff
+      run: ruff check --output-format=github .
+
+    - name: Run examples
+      run: |
+        for entrypoint in */python-source/main.py; do
+          example=$(dirname "$entrypoint")
+          echo "::group::$example"
+          (cd "$example" && python main.py)
+          echo "::endgroup::"
+        done

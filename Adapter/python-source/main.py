@@ -2,7 +2,6 @@ from JsonStorage import JsonStorage
 from TextJsonAdapter import TextJsonAdapter
 from TextStorage import TextStorage
 
-
 if __name__ == '__main__':
     interface = TextStorage()
 

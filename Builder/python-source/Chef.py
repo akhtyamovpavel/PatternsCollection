@@ -2,7 +2,7 @@ from base.Burger import Burger
 from builders.BurgerBuilder import BurgerBuilder
 
 
-class Chef(object):
+class Chef:
     def __init__(self):
         self.builder: BurgerBuilder
 

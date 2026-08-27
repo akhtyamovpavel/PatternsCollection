@@ -1,26 +1,25 @@
-from copy import copy
+from __future__ import annotations
 
 from FerrariPrototype import FerrariPrototype
-from Prototype import Prototype
 
 
 class PirelliFerrari(FerrariPrototype):
-    def __init__(self, chassis_name: str, engine_name: str):
+    """Наследник копируется правильно, потому что копирует себя сам.
+
+    Если бы копию делал вызывающий, он вызвал бы конструктор базового класса и
+    молча потерял бы шасси. Здесь потерять его невозможно.
+    """
+
+    def __init__(self, chassis_name: str, engine_name: str) -> None:
         super().__init__(engine_name)
-        self.__chassis_name = chassis_name
-
-    def __copy__(self) -> Prototype:
-        prototype = copy(super())
-        prototype.chassis_name = self.chassis_name
-        return prototype
-
-    def clone(self) -> Prototype:
-        return copy(self)
+        self._chassis_name = chassis_name
 
     @property
-    def chassis_name(self):
-        return self.__chassis_name
+    def chassis_name(self) -> str:
+        return self._chassis_name
 
-    @chassis_name.setter
-    def chassis_name(self, name):
-        self.__chassis_name = name
+    def clone(self) -> PirelliFerrari:
+        return PirelliFerrari(self._chassis_name, self.engine_name)
+
+    def __str__(self) -> str:
+        return f"PirelliFerrari(chassis={self._chassis_name}, engine={self.engine_name})"

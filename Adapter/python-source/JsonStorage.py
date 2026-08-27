@@ -3,7 +3,7 @@ import json
 
 class JsonStorage:
     def read(self, filename):
-        with open(filename, 'r') as fp:
+        with open(filename) as fp:
             self.pairs = json.load(fp)
 
     def write_json(self, filename):

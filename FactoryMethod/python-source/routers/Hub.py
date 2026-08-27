@@ -1,6 +1,9 @@
 from __future__ import annotations
+
+from routes import EthernetRoute
+from routes import Route
+
 from .Router import Router
-from routes import Route, EthernetRoute
 
 
 class Hub(Router):

@@ -1,8 +1,9 @@
-from factories.RoomFactory import RoomFactory
 from rooms.BasementHardRoom import BasementHardRoom
 from rooms.BasementNormalRoom import BasementNormalRoom
 from rooms.HardRoom import HardRoom
 from rooms.NormalRoom import NormalRoom
+
+from factories.RoomFactory import RoomFactory
 
 
 class BasementFactory(RoomFactory):

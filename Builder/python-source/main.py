@@ -1,7 +1,7 @@
-from Chef import Chef
 from builders.BurgerBuilder import BurgerBuilder
 from builders.HamburgerBuilder import HamburgerBuilder
 from builders.VegiburgerBuilder import VegiburgerBuilder
+from Chef import Chef
 
 
 def main():

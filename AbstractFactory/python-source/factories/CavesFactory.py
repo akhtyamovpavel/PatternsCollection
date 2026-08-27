@@ -1,8 +1,9 @@
-from factories.RoomFactory import RoomFactory
 from rooms.CavesHardRoom import CavesHardRoom
 from rooms.CavesNormalRoom import CavesNormalRoom
 from rooms.HardRoom import HardRoom
 from rooms.NormalRoom import NormalRoom
+
+from factories.RoomFactory import RoomFactory
 
 
 class CavesFactory(RoomFactory):

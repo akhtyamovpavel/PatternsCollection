@@ -1,17 +1,24 @@
 from __future__ import annotations
+
 from abc import ABC
+from abc import abstractmethod
 
 from rooms.HardRoom import HardRoom
 from rooms.NormalRoom import NormalRoom
 
 
 class RoomFactory(ABC):
+    """Абстрактная фабрика: создаёт семейство комнат одного уровня.
+
+    Методы помечены абстрактными намеренно. Без пометки наследник, забывший их
+    реализовать, молча вернул бы None, и ошибка всплыла бы далеко от причины.
+    В C++ той же цели служит чисто виртуальный метод: `= 0` в объявлении.
+    """
+
+    @abstractmethod
     def create_normal_room(self) -> NormalRoom:
-        pass
+        raise NotImplementedError
 
-    # virtual NormalRoom* create_normal_room() = 0;
-
+    @abstractmethod
     def create_hard_room(self) -> HardRoom:
-        pass
-
-    # virtual HardRoom* create_hard_room() = 0;
+        raise NotImplementedError

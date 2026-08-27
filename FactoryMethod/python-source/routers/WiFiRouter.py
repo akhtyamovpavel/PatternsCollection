@@ -1,5 +1,6 @@
 from routers import Router
-from routes import Route, WiFiRoute
+from routes import Route
+from routes import WiFiRoute
 
 
 class WiFiRouter(Router):

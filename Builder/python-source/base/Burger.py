@@ -1,14 +1,14 @@
-from typing import List
+from __future__ import annotations
 
 
-class Burger(object):
-    def __init__(self, components: List[str]):
+class Burger:
+    """Продукт, который собирает строитель."""
+
+    def __init__(self, components: list[str]):
         self._components = components
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return '\n'.join([
             'Burger content:',
-            '\n'.join([
-                component for component in self._components
-            ])
+            '\n'.join(self._components),
         ])

@@ -1,0 +1,42 @@
+name: Java build
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: JavaSource
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '21'
+        cache: maven
+
+    - name: Compile
+      run: mvn -B compile
+
+    - name: Check code style
+      run: mvn -B org.apache.maven.plugins:maven-checkstyle-plugin:3.6.0:check -Dcheckstyle.config.location=../checkstyle.xml
+
+    - name: Run examples
+      run: |
+        mvn -B -q dependency:build-classpath -Dmdep.outputFile=target/classpath.txt
+        classpath="target/classes:$(cat target/classpath.txt)"
+        for source in $(find src/main/java -name 'Main*.java' | sort); do
+          main_class=$(echo "$source" | sed 's|src/main/java/||; s|/|.|g; s|\.java$||')
+          echo "::group::$main_class"
+          java -cp "$classpath" "$main_class"
+          echo "::endgroup::"
+        done
