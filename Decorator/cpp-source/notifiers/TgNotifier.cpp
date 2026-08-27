@@ -5,6 +5,7 @@
 //
 
 #include <TgNotifier.h>
+#include <cstdint>
 #include <sstream>
 #include <tgbot/Bot.h>
 

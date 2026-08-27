@@ -4,6 +4,8 @@
 
 #include "CreateSoupCommand.h"
 
+#include <cstdint>
+
 void CreateSoupCommand::Execute() {
   cook_->Prepare(dish_);
 }

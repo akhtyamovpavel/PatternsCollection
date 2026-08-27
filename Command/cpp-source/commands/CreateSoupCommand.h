@@ -7,6 +7,7 @@
 #include "Command.h"
 #include "../cookery/Cook.h"
 
+#include <cstdint>
 #include <vector>
 #include <string>
 #include <memory>

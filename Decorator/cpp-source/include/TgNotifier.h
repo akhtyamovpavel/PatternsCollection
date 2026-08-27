@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <cstdint>
 #include <DecoratorNotifier.h>
 #include <tgbot/Bot.h>
 #include <inicpp/inicpp.h>

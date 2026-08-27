@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <cstdint>
 #include <memory>
 #include "Command.h"
 #include "../cookery/Barman.h"

@@ -19,23 +19,31 @@ endif()
 
 include_directories(/usr/local/include ${OPENSSL_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
 
+# Версии внешних проектов зафиксированы тегами. Без этого каждая сборка берёт master,
+# и репозиторий ломается от изменений на стороне: так уже прилетели требование
+# nlohmann_json и переход заголовков tgbot-cpp на концепты.
 ExternalProject_Add(
         tgbot
         GIT_REPOSITORY https://github.com/reo7sp/tgbot-cpp
+        GIT_TAG v1.12.3
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_LOCATION}
 )
 
 ExternalProject_Add(
         inicpp_project
         GIT_REPOSITORY https://github.com/SemaiCZE/inicpp
+        GIT_TAG v1.2.2
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_LOCATION}
         -DINCLUDE_INSTALL_DIR=${EXTERNAL_INSTALL_LOCATION}/include
         -DLIB_INSTALL_DIR=${EXTERNAL_INSTALL_LOCATION}/lib
 )
 
+# У vmime единственный тег v0.9.2 выпущен в 2016 году и на современном ICU уже не
+# собирается, поэтому здесь зафиксирован конкретный коммит, а не тег.
 ExternalProject_Add(
         vmime_project
         GIT_REPOSITORY https://github.com/kisli/vmime
+        GIT_TAG 5b0191136f84c177b737c9cf9aa7cf59d1c65ef1
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTERNAL_INSTALL_LOCATION} -DVMIME_HAVE_SASL_SUPPORT=OFF
 )
 
@@ -54,6 +62,14 @@ add_executable(Decorator
 )
 
 add_dependencies(Decorator tgbot inicpp_project vmime_project)
+
+# Заголовки свежего tgbot-cpp написаны на концептах, поэтому одному этому паттерну
+# нужен C++20, тогда как остальной репозиторий собирается семнадцатым стандартом.
+set_target_properties(
+    Decorator PROPERTIES
+    CXX_STANDARD 20
+    CXX_STANDARD_REQUIRED ON
+)
 target_include_directories(Decorator PRIVATE include)
 
 target_link_libraries(Decorator

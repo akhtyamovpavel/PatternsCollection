@@ -6,6 +6,7 @@
 #include <string>
 #include <thread>
 #include <mutex>
+#include <memory>
 
 struct MessageStorage {
   std::queue<std::string> messages;
