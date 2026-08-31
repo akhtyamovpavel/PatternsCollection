@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 project(Serializers)
 
 set(SOURCES ../rooms/HardRoom.cpp ../rooms/NormalRoom.cpp ../rooms/Room.cpp RoomSerializer.cpp RoomSerializer.h GameSerializer.cpp GameSerializer.h)
